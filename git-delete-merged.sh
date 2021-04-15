@@ -3,7 +3,7 @@
 currentBranch=$(git rev-parse --abbrev-ref HEAD);
 
 mergedBranches () {
-    git branch --merged | egrep -v "(^\*|master|develop|${currentBranch})"
+    git branch --merged | egrep -v "(^\*)|(^\W{2}(master|main|prod|develop|dev|${currentBranch})$)"
 }
 
 echo "On branch ${currentBranch}";
